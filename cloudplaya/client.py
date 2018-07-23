@@ -94,17 +94,23 @@ class Client(object):
         browser.set_handle_robots(False)
         browser.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),
                                    max_time=1)
+        
+        print("after prop set")
         browser.addheaders = [('User-agent', self.USER_AGENT)]
+        
+        print("after headerset")
 
         # Attempt to log in to Amazon.
         # Note: We should end up with a redirect.
         r = browser.open(self.AUTH_URL)
+        print("after browser.open")
 
         browser.select_form(nr = 0)
         browser.form['email'] = username
         browser.form['password'] = password
         browser.form['create'] = True
         browser.submit()
+        print("after from open")
 
         content = browser.response().read()
         print(content)
