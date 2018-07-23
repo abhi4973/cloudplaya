@@ -35,19 +35,19 @@ class Authenticate(Command):
                           help='the username to log in as')
 
     def run(self):
-#         try:
-        password = getpass.getpass()
-        if self.client.authenticate(self.options.username, password):
-            print 'Authenticated successfully.'
-        else:
-            sys.stderr.write('Authentication failed.\n')
+        try:
+            password = getpass.getpass()
+            if self.client.authenticate(self.options.username, password):
+                print 'Authenticated successfully.'
+            else:
+                sys.stderr.write('Authentication failed.\n')
+                sys.exit(1)
+        except IOError, e:
+            sys.stderr.write('Unable to write authentication data: %s' % e)
             sys.exit(1)
-#         except IOError, e:
-#             sys.stderr.write('Unable to write authentication data: %s' % e)
-#             sys.exit(1)
-#         except TypeError, e:
-#             sys.stderr.write('type error: %s' % e)
-#             sys.exit(1)
+        except TypeError, e:
+            sys.stderr.write('type error: %s' % e)
+            sys.exit(1)
 
 
 class DownloadAll(Command):
