@@ -105,6 +105,8 @@ class Client(object):
         print("after browser.open")
 
         browser.select_form(name="signIn")
+        print(browser.form)
+
         browser.form["email"] = 'dasdasd@demo.com'
         browser.form["password"] = 'ascascascasc'
         browser.form["create"] = True
