@@ -81,7 +81,7 @@ class Client(object):
 
         self._load_session()
 
-    def authenticate(self, username, password):
+    def authenticate(self, str(username), str(password)):
         browser = mechanize.Browser()
         cookiejar = cookielib.LWPCookieJar()
         browser.set_cookiejar(cookiejar)
