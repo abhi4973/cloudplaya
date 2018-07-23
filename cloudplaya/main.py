@@ -37,7 +37,6 @@ class Authenticate(Command):
     def run(self):
         try:
             password = getpass.getpass()
-            print(password, self.options.username)
             if self.client.authenticate(self.options.username, password):
                 print 'Authenticated successfully.'
             else:
