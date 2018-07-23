@@ -94,7 +94,6 @@ class Client(object):
         browser.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(),
                                    max_time=1)
         
-        print("after prop set")
         browser.addheaders = [('User-agent', self.USER_AGENT)]
         
         print("after headerset")
@@ -105,7 +104,6 @@ class Client(object):
         print("after browser.open")
 
         browser.select_form(name="signIn")
-        print(browser.form)
 
         browser.form["email"] = username
         browser.form["password"] = password
@@ -114,7 +112,6 @@ class Client(object):
         print("after from open")
 
         content = browser.response().read()
-        print(content)
 
         # Get all the amznMusic variables being set.
         auth_vars = {
@@ -139,6 +136,7 @@ class Client(object):
 
                 try:
                     config = json.loads(data)
+                    print(data)
                 except ValueError, e:
                     logging.error("Unable to parse amznMusic.appConfig: %s", e)
                     return False
