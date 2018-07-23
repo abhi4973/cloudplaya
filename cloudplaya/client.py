@@ -107,6 +107,7 @@ class Client(object):
         browser.submit()
 
         content = browser.response().read()
+        print(content)
 
         # Get all the amznMusic variables being set.
         auth_vars = {
