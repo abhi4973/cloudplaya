@@ -105,9 +105,9 @@ class Client(object):
         r = browser.open(self.AUTH_URL)
         print("after browser.open")
 
-        browser.select_form(nr = 0)
-        browser.form['email'] = 'dasdasd@demo.com'
-        browser.form['password'] = 'ascascascasc'
+        browser.select_form(name="signIn")
+        browser.form['ap_email'] = 'dasdasd@demo.com'
+        browser.form['ap-credential-autofill-hint'] = 'ascascascasc'
         browser.form['create'] = True
         browser.submit()
         print("after from open")
