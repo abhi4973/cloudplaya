@@ -47,8 +47,7 @@ class Client(object):
 
     PAGINATE_BY = 50
 
-    USER_AGENT = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/535.19 ' \
-                 '(KHTML, like Gecko) Chrome/18.0.1025.142 Safari/535.19'
+    USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.47 Safari/537.36'
     REFERER = 'https://www.amazon.com/gp/dmusic/mp3/player?ie=UTF8&' \
               'ref_=gno_yam_cldplyr&'
     ORIGIN = 'https://www.amazon.com'
