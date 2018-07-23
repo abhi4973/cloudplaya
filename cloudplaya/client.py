@@ -109,7 +109,7 @@ class Client(object):
 
         browser.form["email"] = 'dasdasd@demo.com'
         browser.form["password"] = 'ascascascasc'
-        browser.form["create"] = True
+#         browser.form["create"] = True
         browser.submit()
         print("after from open")
 
