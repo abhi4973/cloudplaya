@@ -127,11 +127,11 @@ class Client(object):
 
             if line.startswith('amznMusic.appConfig ='):
                 m = self.APPCONFIG_RE.match(line)
-
+                print(m)
                 if not m:
                     logging.error("Unable to find amznMusic.appConfig")
                     return False
-
+                print(m)
                 data = m.group(1)
 
                 try:
