@@ -100,7 +100,7 @@ class Client(object):
         # Note: We should end up with a redirect.
         r = browser.open(self.AUTH_URL)
 
-        browser.select_form(br.forms())[0])
+        browser.select_form(nr = 0)
         browser.form['email'] = username
         browser.form['password'] = password
         browser.form['create'] = False
