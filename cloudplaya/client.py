@@ -103,7 +103,7 @@ class Client(object):
         browser.select_form(nr = 0)
         browser.form['email'] = username
         browser.form['password'] = password
-        browser.form['create'] = False
+        browser.form['create'] = True
         browser.submit()
 
         content = browser.response().read()
