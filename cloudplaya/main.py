@@ -45,6 +45,9 @@ class Authenticate(Command):
         except IOError, e:
             sys.stderr.write('Unable to write authentication data: %s' % e)
             sys.exit(1)
+        except TypeError, e:
+            sys.stderr.write('type error: %s' % e)
+            sys.exit(1)
 
 
 class DownloadAll(Command):
